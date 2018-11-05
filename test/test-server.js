@@ -33,6 +33,27 @@ describe("Blog Posts", function() {
       });
   });
 
+  it('should add a blog post on POST', function() {
+    const newItem = {
+      title: "Growing Pains",
+      author: "Lorenzo Borje",
+      content: "Non eiusmod qui officia commodo aliquip proident nisi tempor veniam."
+      }
+    return chai.request(app)
+      .post('/blog-posts')
+      .send(newItem)
+      .then(function(res) {
+        expect(res).to.have.status(201);
+        expect(res).to.be.json;
+        expect(res.body).to.be.a('object');
+        expect(res.body).to.include.keys('id', 'title', 'content', 'author', 'publishDate');
+        expect(res.body.id).to.not.equal(null);
+        expect(res.body).to.deep.equal(
+          Object.assign(newItem, {id: res.body.id, publishDate: res.body.publishDate})
+        );
+      });
+  });
+  
 });
 
 // set up travis and heroku;
