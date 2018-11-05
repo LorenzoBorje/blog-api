@@ -9,6 +9,8 @@ const postRouter = require('./router');
 
 app.use(morgan('common'));
 
+app.use(express.static('public'));
+
 app.use('/blog-posts', postRouter); 
 
 let server;
