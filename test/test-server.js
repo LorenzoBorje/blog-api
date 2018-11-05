@@ -54,6 +54,25 @@ describe("Blog Posts", function() {
       });
   });
   
+  it('should update a blog post on PUT', function() {
+    const updateData = {
+      title: "A Tale of Two OSes",
+      author: "Lorenzo Borje",
+      content: "Amet sint ut pariatur magna. Irure nulla aute culpa reprehenderit. Mollit quis commodo irure do ea qui."
+    };
+    return chai.request(app)
+      .get('/blog-posts')
+      .then(function(res) {
+        updateData.id = res.body[0].id;
+        return chai.request(app)
+          .put(`/blog-posts/${updateData.id}`)
+          .send(updateData);
+      })
+      .then(function(res) {
+        expect(res).to.have.status(204);
+      });
+  });
+
 });
 
 // set up travis and heroku;
