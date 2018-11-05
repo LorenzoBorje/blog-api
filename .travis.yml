@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: jBTOCAdeFUP/vv8HUDlFR2iQU669ZP6LK57uV71++PSMhWi0/VW9EcejWPcHYvfuhj57cwDml5QfRy8WDWzjFavPPT79gishzw7RLvJGkyy9KqO/32nJ6jiKqjcH/Qp8v2L8A+x2mm0dPNZJP8z7BvVzIJsn1Xobyld6jtU9iJ0mEsW2Nwkcq247ocHlHsLusHjLBg0j3MFbf5Cs68+JtL86xC93hP49LrUju0BSjDV4hwX/RuiL8ISIAOergcAuWbm9nGpe+t2KAw0VLY5GGc1yctyBamNmOdaYDFEdWfxEKucvMEq6OEdh8qOG8rZLf1yqfxmp5U/0ux2HTz4WjZJGOUrjITNA59flfx5pSH5HZtyq02BjjglpsFYSlx6wB/iXJ8uto3yNSSM/ygiqQzPY2JB2T6tugfbtCoW2Imfyb/8AzMEzmNfJ0hYjfhudqIqZD1uD9hthQKzrRCkuPADx6XqE0nlnVnqer56/D9/6c8xhLCU9I+uPKawXl/AsR5ErR6SyDPPi9D1EtAkOBN30Jls1r/Wfmyz5pVXLGkLew/mSJ+8fyl/nht5Gs5II3wlOfb1mCaewVxxWpkZ2rLsu9VoYGtetUfYUTKQyJmlJOGNdGRCE3gUKQtxZSuyV1efz3CTzAG1VHApAe9Wsq2u7tJJWmgmDZTd3CFenSd4=
+  app: ancient-mountain-85988
+  on:
+    repo: LorenzoBorje/blog-api

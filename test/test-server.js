@@ -17,7 +17,7 @@ describe("Blog Posts", function() {
     return closeServer();
   });
 
-  it('should return a blog posts on GET', function() {
+  it('should return blog posts on GET', function() {
     return chai.request(app)
       .get('/blog-posts')
       .then(function(res) {
